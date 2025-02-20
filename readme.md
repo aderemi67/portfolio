@@ -1,91 +1,143 @@
-# wrap-ansi
+# @isaacs/cliui
 
-> Wordwrap a string with [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors_and_Styles)
+Temporary fork of [cliui](http://npm.im/cliui).
 
-## Install
+![ci](https://github.com/yargs/cliui/workflows/ci/badge.svg)
+[![NPM version](https://img.shields.io/npm/v/cliui.svg)](https://www.npmjs.com/package/cliui)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+![nycrc config on GitHub](https://img.shields.io/nycrc/yargs/cliui)
 
-```
-$ npm install wrap-ansi
-```
+easily create complex multi-column command-line-interfaces.
 
-## Usage
+## Example
 
 ```js
-import chalk from 'chalk';
-import wrapAnsi from 'wrap-ansi';
+const ui = require('cliui')()
 
-const input = 'The quick brown ' + chalk.red('fox jumped over ') +
-	'the lazy ' + chalk.green('dog and then ran away with the unicorn.');
+ui.div('Usage: $0 [command] [options]')
 
-console.log(wrapAnsi(input, 20));
+ui.div({
+  text: 'Options:',
+  padding: [2, 0, 1, 0]
+})
+
+ui.div(
+  {
+    text: "-f, --file",
+    width: 20,
+    padding: [0, 4, 0, 4]
+  },
+  {
+    text: "the file to load." +
+      chalk.green("(if this description is long it wraps).")
+    ,
+    width: 20
+  },
+  {
+    text: chalk.red("[required]"),
+    align: 'right'
+  }
+)
+
+console.log(ui.toString())
 ```
 
-<img width="331" src="screenshot.png">
+## Deno/ESM Support
 
-## API
+As of `v7` `cliui` supports [Deno](https://github.com/denoland/deno) and
+[ESM](https://nodejs.org/api/esm.html#esm_ecmascript_modules):
 
-### wrapAnsi(string, columns, options?)
+```typescript
+import cliui from "https://deno.land/x/cliui/deno.ts";
 
-Wrap words to the specified column width.
+const ui = cliui({})
 
-#### string
+ui.div('Usage: $0 [command] [options]')
 
-Type: `string`
+ui.div({
+  text: 'Options:',
+  padding: [2, 0, 1, 0]
+})
 
-String with ANSI escape codes. Like one styled by [`chalk`](https://github.com/chalk/chalk). Newline characters will be normalized to `\n`.
+ui.div({
+  text: "-f, --file",
+  width: 20,
+  padding: [0, 4, 0, 4]
+})
 
-#### columns
+console.log(ui.toString())
+```
 
-Type: `number`
+<img width="500" src="screenshot.png">
 
-Number of columns to wrap the text to.
+## Layout DSL
 
-#### options
+cliui exposes a simple layout DSL:
 
-Type: `object`
+If you create a single `ui.div`, passing a string rather than an
+object:
 
-##### hard
+* `\n`: characters will be interpreted as new rows.
+* `\t`: characters will be interpreted as new columns.
+* `\s`: characters will be interpreted as padding.
 
-Type: `boolean`\
-Default: `false`
+**as an example...**
 
-By default the wrap is soft, meaning long words may extend past the column width. Setting this to `true` will make it hard wrap at the column width.
+```js
+var ui = require('./')({
+  width: 60
+})
 
-##### wordWrap
+ui.div(
+  'Usage: node ./bin/foo.js\n' +
+  '  <regex>\t  provide a regex\n' +
+  '  <glob>\t  provide a glob\t [required]'
+)
 
-Type: `boolean`\
-Default: `true`
+console.log(ui.toString())
+```
 
-By default, an attempt is made to split words at spaces, ensuring that they don't extend past the configured columns. If wordWrap is `false`, each column will instead be completely filled splitting words as necessary.
+**will output:**
 
-##### trim
+```shell
+Usage: node ./bin/foo.js
+  <regex>  provide a regex
+  <glob>   provide a glob          [required]
+```
 
-Type: `boolean`\
-Default: `true`
+## Methods
 
-Whitespace on all lines is removed by default. Set this option to `false` if you don't want to trim.
+```js
+cliui = require('cliui')
+```
 
-## Related
+### cliui({width: integer})
 
-- [slice-ansi](https://github.com/chalk/slice-ansi) - Slice a string with ANSI escape codes
-- [cli-truncate](https://github.com/sindresorhus/cli-truncate) - Truncate a string to a specific width in the terminal
-- [chalk](https://github.com/chalk/chalk) - Terminal string styling done right
-- [jsesc](https://github.com/mathiasbynens/jsesc) - Generate ASCII-only output from Unicode strings. Useful for creating test fixtures.
+Specify the maximum width of the UI being generated.
+If no width is provided, cliui will try to get the current window's width and use it, and if that doesn't work, width will be set to `80`.
 
-## Maintainers
+### cliui({wrap: boolean})
 
-- [Sindre Sorhus](https://github.com/sindresorhus)
-- [Josh Junon](https://github.com/qix-)
-- [Benjamin Coe](https://github.com/bcoe)
+Enable or disable the wrapping of text in a column.
 
----
+### cliui.div(column, column, column)
 
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/npm-wrap_ansi?utm_source=npm-wrap-ansi&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>
+Create a row with any number of columns, a column
+can either be a string, or an object with the following
+options:
+
+* **text:** some text to place in the column.
+* **width:** the width of a column.
+* **align:** alignment, `right` or `center`.
+* **padding:** `[top, right, bottom, left]`.
+* **border:** should a border be placed around the div?
+
+### cliui.span(column, column, column)
+
+Similar to `div`, except the next row will be appended without
+a new line being created.
+
+### cliui.resetOutput()
+
+Resets the UI elements of the current cliui instance, maintaining the values
+set for `width` and `wrap`.
