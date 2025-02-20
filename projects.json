@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-{"1":
-   {
+{
+   "1": {
       "id": "1",
       "title": "Post Malone",
       "category": "Web Design",
@@ -13,76 +12,30 @@
       "bannerphoto": "/photos/post.jpeg",
       "partial": "post"
    },
-   "2":
-   {
-    "id": "2",
-    "title": "caption B",
-    "category": "Web Design",
-    "description": "Create an online presence for the new fashion collection of film director, Be El Be, who is best known for directing music video for Young Thug, such as 'Best Friend', 'power', and 'With That'.",
-    "sitename": "caption B Online Shop",
-    "url": "www.captionb.com",
-    "deliverables": ["Online store"],
-    "tools": ["Node.js", "HTML & CSS", "Stripe Payments "],
-    "coverphoto": "/photos/cover/captionb.jpeg",
-    "bannerphoto": "/photos/captionb-banner.jpeg",
-    "partial": "captionb"
- },
- "3":
- {
-    "id": "3",
-    "title": "Snap Lenses",
-    "category": "Virtual Reality",
-    "description": "Created Snap experiences that launched with upwards of 2 million views for recording artists, such as Halsey, Logic, and Olivia O'Brien.",
-    "sitename": "Artist Website",
-    "url": "https://lensstudio.snapchat.com/creator/0NNDsaupCcLtQPB9WRJPww",
-    "deliverables": ["Snapchat Lens"],
-    "tools": ["Blender","javascript", "Snap Lens Studio", "Photoshop"],
-    "coverphoto": "/photos/cover/snapchat.jpeg",
-    "bannerphoto": "/photos/snap.png",
-    "partial": "snap"
- }
-=======
-{"1":
-   {
-      "id": "1",
-      "title": "Post Malone",
+   "2": {
+      "id": "2",
+      "title": "caption B",
       "category": "Web Design",
-      "description": "A sample artist website to promote the release of Post Malone's album Beerbongs & Bentleys.",
-      "sitename": "Artist Website",
-      "url": "https://greve-chocolatine-34680.herokuapp.com",
-      "deliverables": ["Artist Website", "Promotional Page"],
-      "tools": ["javascript", "HTML & CSS"],
-      "coverphoto": "/photos/cover/postmalone.jpeg",
-      "bannerphoto": "/photos/post.jpeg",
-      "partial": "post"
+      "description": "Create an online presence for the new fashion collection of film director, Be El Be, who is best known for directing music video for Young Thug, such as 'Best Friend', 'power', and 'With That'.",
+      "sitename": "caption B Online Shop",
+      "url": "www.captionb.com",
+      "deliverables": ["Online store"],
+      "tools": ["Node.js", "HTML & CSS", "Stripe Payments "],
+      "coverphoto": "/photos/cover/captionb.jpeg",
+      "bannerphoto": "/photos/captionb-banner.jpeg",
+      "partial": "captionb"
    },
-   "2":
-   {
-    "id": "2",
-    "title": "caption B",
-    "category": "Web Design",
-    "description": "Create an online presence for the new fashion collection of film director, Be El Be, who is best known for directing music video for Young Thug, such as 'Best Friend', 'power', and 'With That'.",
-    "sitename": "caption B Online Shop",
-    "url": "www.captionb.com",
-    "deliverables": ["Online store"],
-    "tools": ["Node.js", "HTML & CSS", "Stripe Payments "],
-    "coverphoto": "/photos/cover/captionb.jpeg",
-    "bannerphoto": "/photos/captionb-banner.jpeg",
-    "partial": "captionb"
- },
- "3":
- {
-    "id": "3",
-    "title": "Snap Lenses",
-    "category": "Virtual Reality",
-    "description": "Created Snap experiences that launched with upwards of 2 million views for recording artists, such as Halsey, Logic, and Olivia O'Brien.",
-    "sitename": "Artist Website",
-    "url": "https://lensstudio.snapchat.com/creator/0NNDsaupCcLtQPB9WRJPww",
-    "deliverables": ["Snapchat Lens"],
-    "tools": ["Blender","javascript", "Snap Lens Studio", "Photoshop"],
-    "coverphoto": "/photos/cover/snapchat.jpeg",
-    "bannerphoto": "/photos/snap.png",
-    "partial": "snap"
- }
->>>>>>> b3e1c31 (Initial commit)
+   "3": {
+      "id": "3",
+      "title": "Snap Lenses",
+      "category": "Virtual Reality",
+      "description": "Created Snap experiences that launched with upwards of 2 million views for recording artists, such as Halsey, Logic, and Olivia O'Brien.",
+      "sitename": "Artist Website",
+      "url": "https://lensstudio.snapchat.com/creator/0NNDsaupCcLtQPB9WRJPww",
+      "deliverables": ["Snapchat Lens"],
+      "tools": ["Blender","javascript", "Snap Lens Studio", "Photoshop"],
+      "coverphoto": "/photos/cover/snapchat.jpeg",
+      "bannerphoto": "/photos/snap.png",
+      "partial": "snap"
+   }
 }
