@@ -8,8 +8,8 @@
       "url": "https://greve-chocolatine-34680.herokuapp.com",
       "deliverables": ["Artist Website", "Promotional Page"],
       "tools": ["javascript", "HTML & CSS"],
-      "coverphoto": "/photos/cover/postmalone.jpeg",
-      "bannerphoto": "/photos/post.jpeg",
+      "coverphoto": "/photos/cover/post.jpeg",
+      "bannerphoto": "/photos/home_posty.jpeg",
       "partial": "post"
    },
    "2": {
@@ -21,7 +21,7 @@
       "url": "www.captionb.com",
       "deliverables": ["Online store"],
       "tools": ["Node.js", "HTML & CSS", "Stripe Payments "],
-      "coverphoto": "/photos/cover/captionb.jpeg",
+      "coverphoto": "/photos/cover/captionB.jpeg",
       "bannerphoto": "/photos/captionb-banner.jpeg",
       "partial": "captionb"
    },
@@ -34,8 +34,8 @@
       "url": "https://lensstudio.snapchat.com/creator/0NNDsaupCcLtQPB9WRJPww",
       "deliverables": ["Snapchat Lens"],
       "tools": ["Blender","javascript", "Snap Lens Studio", "Photoshop"],
-      "coverphoto": "/photos/cover/snapchat.jpeg",
-      "bannerphoto": "/photos/snap.png",
+      "coverphoto": "/photos/cover/snap.png",
+      "bannerphoto": "/photos/snappy.png",
       "partial": "snap"
    }
 }
