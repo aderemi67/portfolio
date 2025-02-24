@@ -461,19 +461,19 @@ a {
 #posty-home {
     margin-bottom: 100px;
     padding-bottom: 50%;
-    background-image: url("photos/home_posty.jpeg");
+    background-image: url("public/home_posty.jpeg");
     background-size: 100%;
     background-repeat: no-repeat;
 }
 #captionb-home {
     padding-bottom: 70%;
-    background-image: url("photos/captionb-banner.jpeg");
+    background-image: url("public/captionb-banner.jpeg");
     background-size: 100%;
 }
 #captionb-product {
     margin-bottom: 100px;
     padding-bottom: 50%;
-    background-image: url("photos/captionb_product.jpeg");
+    background-image: url("public/captionb_product.jpeg");
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -518,7 +518,7 @@ a {
 .about-headshot {
     width: 70%;
     padding-bottom: 70%;
-    background-image: url("photos/banner_post.jpeg");
+    background-image: url("public/banner_post.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     margin: auto;
