@@ -4,6 +4,7 @@
   "description": "this is my portfolio",
   "main": "app.js",
   "scripts": {
+    "vercel": "vercel --prod",
     "start": "node app.js",
     "build": "echo 'No build step required'"
   },
